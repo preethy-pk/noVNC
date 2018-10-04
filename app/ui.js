@@ -57,18 +57,6 @@ const UI = {
 
     // Render default UI and initialize settings menu
     start(callback) {
-        if (parent.location.hostname != 'curation-stag.duta.in' &&
-            parent.location.hostname != 'curation.duta.in') {
-            Log.Error("Cannot process request from: " + window.location.hostname);
-            UI.showStatus(_("Cannot process request from: " + window.location.hostname), 'error');
-            return;    
-        }
-        
-        if (window.top == window.self) {
-            Log.Error("Cannot process request directly from: " + window.location.hostname);
-            UI.showStatus(_("Cannot process request directly from: " + window.location.hostname), 'error');
-            return; 
-        }              
 
         // Setup global variables first
         UI.isSafari = (navigator.userAgent.indexOf('Safari') !== -1 &&
